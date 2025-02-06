@@ -21,6 +21,8 @@ fi
 
 # Install Kafka using Helm
 echo "Installing Kafka using Helm..."
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack
 
 helm install my-release oci://registry-1.docker.io/bitnamicharts/kafka -f https://raw.githubusercontent.com/vinaykumargudi/test/refs/heads/main/values.yaml
