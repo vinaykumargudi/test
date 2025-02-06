@@ -46,6 +46,11 @@ helm install grafana grafana/grafana
 kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-ext
 
 
+# Get Grafana admin password and save to password.txt
+kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode > password.txt
+
+echo "Grafana admin password has been saved to password.txt"
+
 #kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | ForEach-Object { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) }
 
 
