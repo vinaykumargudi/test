@@ -5,7 +5,9 @@ set -e
 
 # Update package list and install Docker CLI
 echo "Updating package list and installing Docker CLI..."
-apt update && apt install -y docker.io
+
+sudo apt remove -y containerd.io
+apt update && sudo apt install -y docker.io
 
 # Log in to Docker Hub
 echo "Logging into Docker Hub..."
