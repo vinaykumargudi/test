@@ -64,13 +64,14 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 
  ngrok config add-authtoken 2sfshrEkS9MtvHbAWkFLhmv6MzQ_6RrdL9q6xNbvmffPNsLS3
 
+sleep 10
 
 nohup kubectl port-forward svc/grafana 3000:80 &
 
 
 ngrok http http://localhost:3000 
 
-
+#grafana dashboard 12483
 
 
 
