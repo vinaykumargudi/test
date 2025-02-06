@@ -60,7 +60,8 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
  ngrok config add-authtoken 2sfshrEkS9MtvHbAWkFLhmv6MzQ_6RrdL9q6xNbvmffPNsLS3
 
 
-kubectl port-forward svc/grafana 3000:80 &
+nohup kubectl port-forward svc/grafana 3000:80 &
+
 
 ngrok http http://localhost:3000 
 
