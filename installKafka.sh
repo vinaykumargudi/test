@@ -6,7 +6,7 @@ set -e
 # Update package list and install Docker CLI
 echo "Updating package list and installing Docker CLI..."
 
-sudo apt remove -y containerd.io  --allow-change-held-packages
+#sudo apt remove -y containerd.io  --allow-change-held-packages
 apt update && sudo apt install -y docker.io
 
 # Log in to Docker Hub
